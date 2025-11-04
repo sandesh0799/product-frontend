@@ -1,7 +1,13 @@
 {
   "version": 2,
   "buildCommand": "npm run build",
-  "outputDirectory": "dist/client",
-  "framework": "angular",
-  "installCommand": "npm install"
+  "outputDirectory": "dist/client/browser",
+  "framework": null,
+  "installCommand": "npm install",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }
