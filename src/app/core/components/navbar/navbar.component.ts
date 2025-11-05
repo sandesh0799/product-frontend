@@ -21,7 +21,9 @@ import { Observable } from 'rxjs';
             <div class="flex items-center space-x-6">
               <a routerLink="/dashboard" routerLinkActive="font-bold" class="hover:text-indigo-200">Dashboard</a>
               <a routerLink="/products" routerLinkActive="font-bold" class="hover:text-indigo-200">Products</a>
-              <a routerLink="/categories" routerLinkActive="font-bold" class="hover:text-indigo-200">Categories</a>
+              @if ((currentUser$ | async)?.role === 'admin') {
+                <a routerLink="/categories" routerLinkActive="font-bold" class="hover:text-indigo-200">Categories</a>
+              }
               <!-- User Menu -->
               <div class="relative group">
                 <button class="flex items-center space-x-1">
