@@ -31,12 +31,13 @@ interface DashboardSummary {
             <a routerLink="/products" class="text-sm text-indigo-500 mt-4 inline-block">View all products →</a>
           </div>
 
+          @if (data.userRole === 'admin') {
           <div class="bg-white rounded-lg shadow p-6">
             <h2 class="text-lg font-semibold text-gray-700">Categories</h2>
             <p class="text-3xl font-bold text-indigo-600 mt-2">{{ data.categoryCount }}</p>
             <a routerLink="/categories" class="text-sm text-indigo-500 mt-4 inline-block">View all categories →</a>
           </div>
-
+          }
         </div>
 
         <!-- Recent Products -->

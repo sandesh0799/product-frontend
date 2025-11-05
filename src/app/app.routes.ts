@@ -25,7 +25,7 @@ export const routes: Routes = [
     {
         path: 'categories',
         loadChildren: () => import('./features/categories/categories.routes').then(r => r.CATEGORIES_ROUTES),
-        canActivate: [authGuard]
+        canActivate: [authGuard, adminGuard]
     },
     { path: '**', redirectTo: '/dashboard' }
 ];
